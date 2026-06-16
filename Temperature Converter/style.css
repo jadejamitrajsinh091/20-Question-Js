@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #050508;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* 🔥🧊 બેકગ્રાઉન્ડમાં ઓરેન્જ અને બ્લુ નું મિશ્રણ */
+.thermal-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: linear-gradient(135deg, rgba(255, 69, 0, 0.1) 0%, rgba(0, 191, 255, 0.1) 100%);
+  z-index: -1;
+}
+
+.thermal-bg::after {
+  content: '';
+  position: absolute;
+  width: 200vw; height: 200vh;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: moveGrid 15s linear infinite;
+}
+
+@keyframes moveGrid {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-30px, -30px); }
+}
+
+form {
+  background: rgba(15, 15, 20, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.9), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+form:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.header h2 {
+  font-family: 'Orbitron', sans-serif;
+  /* ટેક્સ્ટમાં જ ગરમી અને ઠંડીનો કલર */
+  background: linear-gradient(90deg, #ff4500, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 26px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #8da1b5;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 22px;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* બટનોને ઉપર-નીચે ગોઠવવા */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1.5px;
+}
+
+/* 🔥 ફાયર બટન ડીઝાઇન */
+.btn-hot {
+  background: linear-gradient(90deg, #ff4500, #ff8c00);
+  color: #111;
+  box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+}
+
+.btn-hot:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 69, 0, 0.6);
+}
+
+/* 🧊 આઇસ બટન ડીઝાઇન */
+.btn-cold {
+  background: linear-gradient(90deg, #00bfff, #1e90ff);
+  color: #111;
+  box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
+}
+
+.btn-cold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.6);
+}
+
+/* રિઝલ્ટ બોક્સ */
+#result {
+  margin-top: 25px;
+  min-height: 45px;
+  font-size: 24px;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background: rgba(0,0,0,0.4);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  form { padding: 30px 20px; }
+  input { font-size: 18px; padding: 14px; }
+  button { padding: 14px; font-size: 14px; }
+}
