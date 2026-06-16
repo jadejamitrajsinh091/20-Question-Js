@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #060913; /* ડીપ નેવી-બ્લેક ડાર્ક થીમ */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* 💱 ફ્લોટિંગ કરન્સી બેકગ્રાઉન્ડ */
+.forex-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.forex-bg span {
+  position: absolute;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.03);
+  animation: floatCurrency 10s infinite alternate ease-in-out;
+}
+
+.forex-bg span:nth-child(1) { top: 15%; left: 15%; animation-duration: 8s; font-size: 150px; color: rgba(255, 170, 0, 0.05); }
+.forex-bg span:nth-child(2) { bottom: 15%; right: 10%; animation-duration: 12s; font-size: 130px; color: rgba(0, 255, 170, 0.05); }
+.forex-bg span:nth-child(3) { top: 35%; right: 25%; animation-duration: 10s; font-size: 90px; }
+.forex-bg span:nth-child(4) { bottom: 25%; left: 20%; animation-duration: 14s; font-size: 140px; }
+
+@keyframes floatCurrency {
+  0% { transform: translateY(0) rotate(-10deg); }
+  100% { transform: translateY(-40px) rotate(20deg); }
+}
+
+/* 🏦 મેઈન ડેશબોર્ડ */
+form {
+  background: rgba(12, 16, 28, 0.85);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.9), inset 0 0 20px rgba(0, 255, 204, 0.05);
+  transition: 0.3s;
+}
+
+form:hover {
+  border-color: rgba(0, 255, 204, 0.5);
+  box-shadow: 0 20px 50px rgba(0,0,0,1), inset 0 0 30px rgba(0, 255, 204, 0.1);
+}
+
+.header h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.header p {
+  color: #00ffcc;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+/* 🚀 ઇનપુટ બોક્સ */
+input {
+  width: 100%;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 22px;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-bottom: 25px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+/* 💵 USD બટન (Green) */
+.btn-usd {
+  background: linear-gradient(90deg, #00b09b, #96c93d);
+  color: #000;
+  box-shadow: 0 5px 15px rgba(150, 201, 61, 0.4);
+}
+
+.btn-usd:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(150, 201, 61, 0.6);
+}
+
+/* ₹ INR બટન (Gold/Yellow) */
+.btn-inr {
+  background: linear-gradient(90deg, #f7971e, #ffd200);
+  color: #000;
+  box-shadow: 0 5px 15px rgba(255, 210, 0, 0.4);
+}
+
+.btn-inr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 210, 0, 0.6);
+}
+
+/* 🚀 રિઝલ્ટ બોક્સ (ડિજિટલ ટ્રેડિંગ બોર્ડ જેવું) */
+#result {
+  margin-top: 25px;
+  min-height: 45px;
+  font-size: 24px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  form { padding: 30px 20px; }
+  input { font-size: 18px; padding: 14px; }
+  button { padding: 14px; font-size: 14px; }
+}

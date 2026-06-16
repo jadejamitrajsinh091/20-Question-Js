@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Poppins:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b132b; /* ડીપ નેવી બ્લુ (બેંકિંગ કલર) */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* 💵 ફ્લોટિંગ કરન્સી બેકગ્રાઉન્ડ */
+.bank-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bank-bg span {
+  position: absolute;
+  font-family: 'Share Tech Mono', monospace;
+  color: rgba(16, 185, 129, 0.08); /* આછો લીલો કલર */
+  animation: floatMoney 15s infinite linear;
+}
+
+/* અલગ-અલગ જગ્યાએથી પડતા કરન્સી ચિહ્નો */
+.bank-bg span:nth-child(1) { top: -20%; left: 15%; animation-duration: 12s; font-size: 150px; }
+.bank-bg span:nth-child(2) { top: -20%; left: 75%; animation-duration: 18s; font-size: 100px; }
+.bank-bg span:nth-child(3) { top: -20%; left: 45%; animation-duration: 14s; font-size: 200px; }
+.bank-bg span:nth-child(4) { top: -20%; left: 85%; animation-duration: 20s; font-size: 120px; }
+
+@keyframes floatMoney {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* 🏦 ATM મશીન UI (Form) */
+form {
+  background: linear-gradient(145deg, #1c2541, #0b132b);
+  border: 2px solid #3a506b;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 5px 15px rgba(255,255,255,0.1);
+  /* નીચેની ગ્રીન પટ્ટી જેમાંથી પૈસા બહાર આવે છે એવો લુક */
+  border-bottom: 8px solid #10b981; 
+}
+
+.atm-header h2 {
+  color: #fbbf24; /* પ્રીમિયમ ગોલ્ડ કલર */
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+.atm-header p {
+  color: #5bc0be;
+  font-family: 'Share Tech Mono', monospace;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* 🚀 ATM સ્ક્રીન જેવું ઇનપુટ બોક્સ */
+input {
+  width: 100%;
+  padding: 18px;
+  background: #000; /* બ્લેક સ્ક્રીન */
+  border: 2px solid #5bc0be;
+  border-radius: 8px;
+  color: #10b981; /* ATM નો નિયોન ગ્રીન કલર */
+  font-size: 26px;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  margin-bottom: 25px;
+  outline: none;
+  letter-spacing: 2px;
+}
+
+input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* 🚀 ગોલ્ડન બેંક બટન */
+button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(251, 191, 36, 0.6);
+}
+
+/* 🚀 ડિજિટલ રિઝલ્ટ બોક્સ (જ્યાં નોટો છપાશે) */
+#result {
+  margin-top: 25px;
+  background: #050a15;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #10b981;
+  font-family: 'Share Tech Mono', monospace;
+  color: #10b981;
+  font-size: 20px;
+  text-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+  line-height: 1.8;
+  min-height: 40px;
+}
+
+/* 📱 Responsive Mobile */
+@media (max-width: 500px) {
+  form { padding: 30px 20px; }
+  input { font-size: 22px; padding: 15px; }
+  button { padding: 15px; font-size: 16px; }
+}
