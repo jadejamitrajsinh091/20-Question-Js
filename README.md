@@ -26,6 +26,9 @@ A collection of beginner-friendly JavaScript projects built to practice programm
 | 18 | BMI Calculator | <a href="https://codepen.io/Mitrajsinh-Jadeja/pen/ZYLBpOZ" target="_blank">Open Project</a> |
 | 19 | Movie Ticket Price Calculator | <a href="https://codepen.io/Mitrajsinh-Jadeja/pen/KwaNggr" target="_blank">Open Project</a> |
 
+<h3>Self Video</h3>
+<a href = "https://drive.google.com/file/d/1HuIexbeuoP1JF_K80PgnTSjrVN8fTB4o/view?usp=sharing">VIDEO LINK</a>
+
 ## 🛠️ Technologies Used
 
 - HTML5
